@@ -17,9 +17,10 @@ public class PostResource {
     @Autowired
     private PostService service;
 
-    @GetMapping("/resource/{id}") // Renomeado o mapeamento para evitar conflito
+    @GetMapping("/resource/{id}") 
     public ResponseEntity<Post> findPostById(@PathVariable String id) {
         Post obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }
+
